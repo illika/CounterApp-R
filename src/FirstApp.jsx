@@ -1,19 +1,8 @@
-const newMessage = {
-    message: "Hola Mundo",
-    title: "Illika"
-};
-
-const nombre = () => {
-    return "illika";
-}
-
-export const FirstApp = () => {
-
+export const FirstApp = ({title, subtitle}) => {
     return (
         <>
-            <h1>{ nombre() }</h1>
-            <code>{ JSON.stringify(newMessage) }</code>
-            <p>Soy un Subtitulo</p>
+            <h1>{ title }</h1>
+            <p>{ subtitle + 1 }</p>
         </>
     );
 }
