@@ -10,7 +10,14 @@ export const CounterApp = ({ value }) => {
         // setCounter(counter + 1);
         // 2 forma
         setCounter((c) => c + 1);
+    }
 
+    const handledSubtract = () => {
+        setCounter(counter - 1);
+    }
+
+    const handledReset = () => {
+        setCounter(value);
     }
 
     return (<>
@@ -19,6 +26,12 @@ export const CounterApp = ({ value }) => {
 
         <button onClick={handledAdd}>
             +1
+        </button>
+        <button onClick={handledReset}>
+            Reset
+        </button>
+        <button onClick={handledSubtract}>
+            -1
         </button>
     </>);
 }
