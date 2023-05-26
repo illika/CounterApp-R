@@ -1,12 +1,28 @@
+import { useState } from 'react';
 import PropTypes from "prop-types";
 
-export const CounterApp = ({value}) => {
+export const CounterApp = ({ value }) => {
+
+    const [counter, setCounter] = useState(value);
+
+    const handledAdd = () => {
+        // 1 forma
+        // setCounter(counter + 1);
+        // 2 forma
+        setCounter((c) => c + 1);
+
+    }
+
     return (<>
-    <h1>CounterApp</h1>
-    <h2> { value } </h2>
+        <h1>CounterApp</h1>
+        <h2> {counter} </h2>
+
+        <button onClick={handledAdd}>
+            +1
+        </button>
     </>);
 }
 
 CounterApp.propTypes = {
-    value : PropTypes.number
+    value: PropTypes.number.isRequired
 }
